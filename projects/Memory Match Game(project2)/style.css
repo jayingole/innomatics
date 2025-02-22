@@ -1,0 +1,105 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Landing page styling */
+.landing-page {
+    text-align: center;
+    display: block;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.category-buttons button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.category-buttons button:hover {
+    background-color: #45a049;
+}
+
+/* Game container styling */
+.game-container {
+    display: none;
+    text-align: center;
+}
+
+#score,
+#timer {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+/* Game board and cards */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    color: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card.flipped {
+    color: black;
+    background-color: #f39c12;
+    transform: rotateY(180deg);
+}
+
+.card.matched {
+    background-color: #2ecc71;
+    color: white;
+    pointer-events: none;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 600px) {
+    .game-board {
+        grid-template-columns: repeat(4, 80px);
+    }
+    .category-buttons button {
+        font-size: 14px;
+        padding: 12px 25px;
+    }
+    #score,
+    #timer {
+        font-size: 20px;
+    }
+}
